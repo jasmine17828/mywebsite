@@ -1,0 +1,586 @@
+/* === 基本設定 === */
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fffaf7;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* === 導覽列樣式 === */
+nav {
+  background-color: #bfa2db;
+  padding: 12px 0;
+  position: Sticky; /* 固定在頁面頂部 */
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a\:hover {
+  color: #ffe5ec;
+}
+
+/* === 首頁介紹區塊 === */
+.intro-section {
+  position: relative; /*以 .intro-section 為定位父元素 */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 40px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-height: 65vh;
+}
+
+.intro-left {
+  background-color: #f8f2ef;
+  padding: 40px 20px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.profile-photo-large {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  margin: 0 8px;
+  font-size: 1.2rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #8e44ad;
+}
+
+.intro-section {
+  position: relative; /* 為絕對定位做基準 */
+  z-index: 1;
+  overflow: visible;
+}
+
+.intro-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.intro-right {
+  max-width: 500px;     /* ✅ 控制最大寬度 */
+  word-wrap: break-word; /* ✅ 長字換行 */
+  overflow-wrap: break-word;
+  flex: 1;               /* ✅ 可彈性收縮 */
+  /*每一行間距大一點*/
+  line-height: 1.5;
+}
+
+.intro-right h1 {
+    font-size: 3.5rem;
+    /*color: #4e3ca9;*/
+    margin-bottom: 20px;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  text-decoration: none; /* 去除連結底線 */
+  pointer-events: auto;
+}
+
+.scroll-indicator:hover {
+  cursor: pointer;
+}
+
+.arrow {
+  width: 24px;
+  height: 24px;
+  border-bottom: 3px solid #d3bfe9;
+  border-right: 3px solid #d3bfe9;
+  transform: rotate(45deg);
+  margin: 4px 0;
+  opacity: 0;
+  animation: bounceArrow 1.5s infinite;
+}
+
+.arrow.delay {
+  animation-delay: 0.3s;
+}
+
+@keyframes bounceArrow {
+  0% { opacity: 0; transform: translateY(0) rotate(45deg); }
+  30% { opacity: 1; transform: translateY(6px) rotate(45deg); }
+  60% { opacity: 0; transform: translateY(12px) rotate(45deg); }
+  100% { opacity: 0; transform: translateY(0) rotate(45deg); }
+}
+
+
+/* CTA 按鈕樣式 */
+.cta-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background-color: #bfa2db;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #d7bfed;
+}
+
+.cta-button.outline {
+  background-color: transparent;
+  color: #000;
+  border: 2px solid #000;
+}
+
+.cta-button.outline:hover {
+  background-color: #f0f0f0;
+}
+
+/* === 響應式：首頁介紹 === */
+@media (max-width: 768px) {
+  .intro-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .intro-right h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* === 技能列表樣式 === */
+.skills-list {
+  list-style: disc;
+  padding-left: 24px;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.skills-list li {
+  margin-bottom: 16px; /* 每個技能項目底部留 16px 空間 */
+  color:#4e3ca9
+}
+
+.skill-detail {
+  display: block;
+  margin-top: 4px;
+  color: #555; /* 淡一點，主次分明 */
+}
+
+/* === 主內容區塊統一寬度設定 === */
+.content-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* === 雙欄區塊：技能+亮點 === */
+.highlight-title {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.highlight-columns {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.column-left {
+  flex: 1;
+  min-width: 300px;
+  text-align: left; /* ✅ 讓左側技能內容靠左 */
+  display: flex;
+  align-items: center;
+}
+
+.column-right {
+  background: white;
+  padding: 50px 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  min-width: 300px;
+}
+
+.centered-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* === 輪播圖樣式 === */
+.carousel {
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+.carousel-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.carousel-caption {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: #6b5b95;
+  font-weight: bold;
+}
+
+/* 指示點樣式 */
+.carousel-indicators {
+  margin-top: 15px;
+  text-align: center;
+}
+
+
+.dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 6px; /* ⬅️ 左右留 6px 空間 */
+  background-color: lightgray;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.dot:hover {
+  background-color: #bfa2db;
+  transform: scale(1.2);
+  transition: background-color 0.3s, transform 0.3s;}
+
+  .dot.active {
+    background-color: #6b5b95;
+    transform: scale(1.2);
+  }
+
+  /* === 經歷卡片區塊 === */
+
+.experience-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px; /* ⬅️ 調整左右欄距離 */
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  align-items: center;
+}
+
+.exp-left {
+  flex: 0 0 250px;
+  text-align: center;
+}
+
+.exp-right {
+  flex: 1;
+  text-align: left;
+}
+
+.company-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 2px solid #bfa2db;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.exp-date {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #4e3ca9;
+  margin-bottom: 10px;
+}
+
+.exp-meta {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+.exp-block {
+  margin-bottom: 24px;
+}
+
+.exp-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #6b5b95;
+  margin-bottom: 8px;
+}
+
+
+.exp-block ul {
+  list-style-position: outside;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.exp-block li {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+/* ✅ 最後一張經歷卡片靠近履歷下載 */
+.experience-card:last-of-type {
+  margin-bottom: 0px !important; /* 距離 resume-download 更貼近 */
+}
+
+.resume-download {
+  text-align: center;
+  margin-top: 0px; /* 與卡片間距較小 */
+  padding-top: 0px;
+  padding-bottom: 60px;
+}
+
+/* 聯絡表單樣式 */
+.contact-wrapper {
+  background-color: #fffaf7;
+  padding: 60px 20px;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.contact-left,
+.contact-right {
+  flex: 1;
+  min-width: 300px;
+  padding: 40px;
+}
+
+.contact-left {
+  background-color: #f7f0fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-left h2 {
+  font-size: 1.8rem;
+  color: #4e3ca9;
+  margin-bottom: 16px;
+}
+
+.contact-left p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #bfa2db;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  align-items: center;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #d7bfed;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+}
+
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+    }
+
+    .profile-photo {
+      width: 100px;
+      height: 100px;
+    }
+
+    .cta-button {
+      font-size: 0.9rem;
+    }
+
+    .carousel-btn {
+      font-size: 1.5rem;
+      padding: 6px;
+    }
+
+    .two-column-section,
+    .highlight-columns {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .skills-list {
+      text-align: left;
+    }
+
+    .experience-card {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .exp-left {
+      padding-bottom: 20px;
+    }
+
+    .exp-right {
+      text-align: left;
+    }
+  }
+
+#backToTop {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  background-color: #ceb3e5;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+#backToTop:hover {
+  background-color: #bfa2db;
+}
+
+/* === 隱藏上下箭頭並客製滾動條樣式 === */
+/* 適用於 Chrome、Edge、新版 Opera */
+body::-webkit-scrollbar {
+  width: 8px; /* 調整寬度 */
+
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent; /* 滾動軌道背景透明 */
+  margin-top: 60px; /* ✅ 頂部留白空間，對應 nav 高度 */
+  /*頂部留白空間顯示為紫色*/
+    border-radius: 6px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #bfa2db;  /* 紫色手把 */
+  border-radius: 6px;
+}
+
+body::-webkit-scrollbar-button {
+  display: none; /* ✅ 隱藏上下箭頭 */
+}
+

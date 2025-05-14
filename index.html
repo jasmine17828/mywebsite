@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jasmine 的個人網站</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+<nav>
+  <ul>
+    <li><a href="#home">首頁</a></li>
+    <li><a href="#highlights">我的亮點</a></li>
+    <li><a href="#experience">工作經歷</a></li>
+    <li><a href="#contact">聯絡我</a></li>
+  </ul>
+</nav>
+
+<section id="home" class="intro-section">
+  <div class="intro-content">
+    <div class="intro-left">
+      <img src="image/profile.jpg" alt="Jasmine 的照片" class="profile-photo-large" />
+      <h2>謝依晴 Jasmine</h2>
+      <p class="subtitle">專案運營顧問 / 資工轉職學習者</p>
+      <div class="social-icons">
+        <a href="#" onclick="alert('Facebook 尚未建立，敬請期待！'); return false;">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" onclick="alert('LinkedIn 尚未建立，敬請期待！'); return false;">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="intro-right">
+      <h1> Hello!</h1>
+      <h3>持續精進，是我對專業最基本的承諾。</h3>
+      <div class="intro-buttons">
+        <a href="#experience" class="cta-button">RESUME</a>
+        <a href="#highlights" class="cta-button outline">More Me!</a>
+      </div>
+      <p>成就他人才能成就自我，目標的設定是為了不讓自己迷失方向。</p>
+      <p>希望可以成為一個可以賦能團隊的人，相信唯有團隊合作，彼此信任，才能攜手度過每一次的挑戰與變化 。</p>
+    </div>
+    <a href="#highlights" class="scroll-indicator">
+      <div class="arrow"></div>
+      <div class="arrow delay"></div>
+    </a>
+  </div>
+</section>
+
+<section id="highlights" class="content-section two-column-section">
+  <h2 class="highlight-title">我的亮點</h2>
+
+  <div class="highlight-columns">
+    <!-- 左欄：技能清單 -->
+    <div class="column-left centered-content">
+      <ul class="skills-list">
+        <li>
+          <strong>商業實戰：</strong>
+          <div class="skill-detail">跨境電商營運策略、數位廣告優化、客戶成功規劃</div>
+        </li>
+        <li>
+          <strong>軟體技能：</strong>
+          <div class="skill-detail">HTML、CSS、JavaScript、Java（持續進修中）</div>
+        </li>
+        <li>
+          <strong>工具運用：</strong>
+          <div class="skill-detail">Canva、Excel / Google Sheets、PowerPoint</div>
+        </li>
+        <li>
+          <strong>語言能力：</strong>
+          <div class="skill-detail">中文（母語）、英文（流利）</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 右欄：圖片輪播 -->
+    <div class="column-right">
+      <!-- 🔁 圖片區塊 -->
+      <div class="carousel">
+        <div class="carousel-images">
+          <img src="image/上課.jpg" alt="阿里巴巴授課講師" >
+          <img src="image/橙功營.jpg" alt="阿里巴巴橙功營隊輔" >
+          <img src="image/橙功營最佳團隊獎.jpg" alt="橙功營最佳團隊獎">
+          <img src="image/達人賽得獎.jpg" alt="輔導商家獲獎年度達人賽" >
+          <img src="image/商家輔導花絮.jpg" alt="商家輔導花絮">
+        </div>
+      </div>
+
+      <!-- ✅ 放外面就不會被 overflow: hidden 擋住 -->
+      <div class="carousel-indicators"></div>
+      <div id="carousel-caption" class="carousel-caption"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="experience" class="content-section">
+  <h2>工作經歷</h2>
+
+  <!-- 工作經歷卡片 1 -->
+  <div class="experience-card">
+    <!-- 左欄：公司資訊 -->
+    <div class="exp-left">
+      <img src="image/Alibaba-Logo-3.png" alt="公司 Logo" class="company-logo" />
+      <div class="exp-date">2022/7 – 2024/2</div>
+      <div class="exp-meta">
+        <p><strong>香港商阿里巴巴香港電子商務有限公司台灣分公司</strong></p>
+        <p>平台商家營運專員・小組長</p>
+        <p>台中市南屯區</p>
+      </div>
+    </div>
+
+    <!-- 右欄：三大專業領域 -->
+    <div class="exp-right">
+      <div class="exp-block">
+        <h4 class="exp-title"> 管理與策略協調能力</h4>
+        <ul>
+          <li>規劃組員週輔導計畫，協助商家追蹤目標進度與續約狀況</li>
+          <li>協調內外部資源，處理跨部門客訴與第三方服務溝通</li>
+        </ul>
+      </div>
+      <div class="exp-block">
+        <h4 class="exp-title"> 商家運營輔導經驗</h4>
+        <ul>
+          <li>協助商家擬定平台成長策略，提供陪跑與操作建議</li>
+          <li>制定教育訓練內容並帶領團隊執行，提升商家活躍度</li>
+        </ul>
+      </div>
+      <div class="exp-block">
+        <h4 class="exp-title"> 數據分析與廣告優化實戰</h4>
+        <ul>
+          <li>分析百家企業後台數據，找出潛力商家並制定優化計畫</li>
+          <li>執行廣告投放策略與成效診斷，提升轉換率與站內表現</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 工作經歷卡片 2（可複製使用） -->
+  <div class="experience-card">
+    <!-- 左欄：公司資訊 -->
+    <div class="exp-left">
+      <img src="image/DDK.png" alt="DDK Logo" class="company-logo" />
+      <div class="exp-date">2021/9 – 2022/5</div>
+      <div class="exp-meta">
+        <p><strong>英屬開曼群島商鋒明國際股份有限公司台灣分公司</strong></p>
+        <p>儲備業務</p>
+        <p>台中市西屯區</p>
+      </div>
+    </div>
+
+    <!-- 右欄：三大專業領域 -->
+    <div class="exp-right">
+      <div class="exp-block">
+        <h4 class="exp-title"> 管理與協調能力</h4>
+        <ul>
+          <li>掌握產品交期與排程，負責生管部與工廠出貨溝通協調</li>
+          <li>協助生產會議與報表追蹤，確保船期與訂單安排準時完成</li>
+        </ul>
+      </div>
+      <div class="exp-block">
+        <h4 class="exp-title">國際業務處理經驗</h4>
+        <ul>
+          <li>負責拉丁美洲與東南亞客戶業務往來、EMAIL 回覆、樣品安排與訂單處理</li>
+          <li>處理出貨安排、單據製作、客訴處理及帳款追蹤，維護客戶關係</li>
+        </ul>
+      </div>
+      <div class="exp-block">
+        <h4 class="exp-title"> 數據彙整與報表能力</h4>
+        <ul>
+          <li>製作業績報表、客戶下單週/月/年分析，追蹤銷售與合併資料</li>
+          <li>協助主管資料交接與行政庶務，支援部門日常營運</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 工作經歷卡片 3（可複製使用） -->
+  <div class="experience-card">
+    <!-- 左欄：公司資訊 -->
+    <div class="exp-left">
+      <img src="image/specialized-logo.png" alt="DDK Logo" class="company-logo" />
+      <div class="exp-date">2021/2 – 2021/8</div>
+      <div class="exp-meta">
+        <p><strong>Specialized Bicycle Components, Inc.</strong></p>
+        <p>採購實習生</p>
+        <p>台中市南屯區</p>
+      </div>
+    </div>
+
+    <!-- 右欄：三大專業領域 -->
+    <div class="exp-right">
+      <div class="exp-block">
+        <h4 class="exp-title"> 出貨報表維護</h4>
+        <ul>
+          <li>應用大量 Excel 技巧加速文件製作，提升50%效率</li>
+          <li>熟悉採購與船務流程，掌握進出口作業細節</li>
+        </ul>
+      </div>
+      <div class="exp-block">
+        <h4 class="exp-title">> 資料建檔與系統操作</h4>
+        <ul>
+          <li>使用 Oracle 系統建立與維護訂單資料</li>
+          <li>熟悉自行車產業產品分類與供應鏈結構</li>
+        </ul>
+    </div>
+  </div>
+  </div>
+ </section>
+<div class="resume-download">
+  <p>如需完整履歷 PDF，可點選以下連結：</p>
+  <a href="resume.pdf" target="_blank" class="cta-button" >下載履歷</a>
+</div>
+
+
+
+<section id="contact" class="contact-wrapper">
+  <div class="contact-container">
+    <!-- 左側插圖或資訊區 -->
+    <div class="contact-left">
+      <h2>聯絡我</h2>
+      <p>歡迎填寫表單與我聯繫！<br>不論是合作機會、專案討論，或單純想聊聊，
+        我都非常樂意收到你的訊息 :)</p>
+    </div>
+
+    <!-- 右側表單區 -->
+    <div class="contact-right">
+      <form class="contact-form">
+        <label for="name">姓名</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phone">手機</label>
+        <input type="text" id="phone" name="phone" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">想說的話</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit" >送出</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<div class="full-page-transition"></div>
+<script src="script.js"></script>
+
+<button id="backToTop" title="回到頂部">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+</body>
+</html>
